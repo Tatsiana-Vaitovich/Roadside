@@ -1,0 +1,88 @@
+/*подключаем таблицы к основной таблице css*/
+@import url('reset.css'); 
+@import url('fonts.css');
+*, *::before, *::after{ 
+-webkit-box-sizing: border-box; /*префиксы для разных браузеров*/
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+box-sizing: border-box;
+}
+body {
+background-color: #f8f8f8;
+margin: auto;
+width: 100%;
+}
+section#status-bar{
+background: #f8f8f8;
+background:-webkit-linear-gradient(to top, rgba(0,0,0,0.15), rgba(0,0,0,0));
+background:-moz-linear-gradient(to top, rgba(0,0,0,0.15), rgba(0,0,0,0));
+background:-ms-linear-gradient(to top, rgba(0,0,0,0.15), rgba(0,0,0,0));
+background: linear-gradient(to top, rgba(0,0,0,0.15), rgba(0,0,0,0)); 
+border-bottom: 2px groove #ffffff;
+height: 40px;
+width: 100%;
+}
+section#status-bar{
+	display: inline-flex;
+	flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	width:100%;
+	height: 50px;
+}
+div#status-bar-content{
+	display: inline-flex;
+	flex-direction: row;
+    justify-content: space-between;
+	align-items: center;
+	width: 800px;
+}
+div#status-bar-commands{
+	display: inline-flex;
+	flex-direction: row;
+    justify-content: space-between;
+	align-items: center;
+	width: 400px;
+	height: 30px;
+}
+div#greeting{
+    display: inline-flex;
+	flex-direction: row;
+    justify-content: flex-start;
+	align-items: center;
+	width: 50%;
+}
+div#action{
+    background: url('../img/action-bar-bg.png') no-repeat;
+    display: inline-flex;
+	flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	height: 30px;
+	width:200px;
+}
+div#action a::before{
+	content:"|"; 
+}
+div#action a[title="License"]::after{
+	content:"|";
+}
+form#search input[type="text"]{
+	background: url("../img/search-field.png") no-repeat;
+	border: none;
+	height: 22px;
+	width: 130px;
+	display: inline-flex;
+	flex-direction: row;
+    justify-content: flex-end;
+	align-items: center;
+	padding-left: 30px;
+}
+form#search input[type="submit"] {
+display: none;}
+div#container{	
+-webkit-box-shadow:inset 0px 3px 5px rgba(0,0,0,0.15), inset 0px -3px 5px rgba(0,0,0,0.15);
+-moz-box-shadow:inset 0px 3px 5px rgba(0,0,0,0.15), inset 0px -3px 5px rgba(0,0,0,0.15);
+-ms-box-shadow:inset 0px 3px 5px rgba(0,0,0,0.15), inset 0px -3px 5px rgba(0,0,0,0.15);
+box-shadow: inset 0px 3px 5px rgba(0,0,0,0.15), inset 0px -3px 5px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,400 @@
+/*подключаем таблицы к основной таблице css*/
+@import url('reset.css'); 
+@import url('fonts.css');
+*, *::before, *::after{ 
+-webkit-box-sizing: border-box; /*префиксы для разных браузеров*/
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+box-sizing: border-box;
+}
+body {
+background-color: #f8f8f8;
+margin: auto;
+width: 100%;
+}
+section#status-bar{
+background: url('../img/status-bar-bg.png') repeat-x;
+border-bottom: 2px groove #ffffff;
+height: 40px;/*50px*/
+width: 100%;
+}
+div#status-bar-content{
+margin: 10px auto 0;
+width: 800px;
+height: 100%;
+}
+div#status-bar-commands{
+width: 400px; /*если задаем свойство флоат - указываем ширину!*/
+float: left;
+}
+form#search{
+width: 400px;
+/*width: 200px;*/
+float: right;
+}
+div#greeting{
+width: 50%;
+float: left;
+padding-top: 7px;
+}
+div#action{
+background: url('../img/action-bar-bg.png') no-repeat;
+margin-left:200px;
+padding: 7px 10px;
+height:30px;
+}
+div#action a::before{
+	content:"|"; /*вставляем разделители*/
+}
+div#action a[title="License"]::after{
+	content:"|";
+}
+form#search input[type="text"]{
+	background: url("../img/search-field.png") no-repeat;
+	border: none;
+	height: 22px;
+	width: 130px;
+	padding: 5px 0px 0px 30px;
+	margin-top: 2px;
+	float: right;
+}
+form#search input[type="submit"] {
+display: none; /*кнопка "субмит* спрятана, теперь поиск будет осуществлятся после нажатия ввода*/
+}
+section#header{
+	background: url("../img/header-image.png") no-repeat center;
+    height:250px;
+	width:100%;
+	background-color: #6eb9cc;/*если у пользователя разрешение экрана больше 1600px по краям будет синий цвет*/
+	border-bottom: 2px ridge #ffffff;/*ridge противоположно groove*/
+}
+div#logo{
+	width:800px;
+	padding-top:25px;
+	margin:auto;/*выравнивание по горизонтали*/
+	}
+div#container{
+    width:100%;
+	height:860px;
+}
+div#content-top-shadow{
+	height:20px;
+	width:100%;
+    background: url("../img/content-top-shadow.png") repeat-x;
+}
+div#content-bottom-shadow{
+	height:20px;
+	width:100%;
+    background: url("../img/content-bottom-shadow.png") repeat-x;
+	clear: both;
+}
+section#content{
+	width:800px;
+	height:100%;
+	margin:auto;
+	padding-top:50px;
+	padding-bottom:50px;
+	position: relative;/*все вну блоки будут позиционироваться относительно этого блока*/
+}
+div#page-wrapper{
+    width:100%;
+	height:265px;
+	clear:both;
+	border:1px solid #b3b3b3;
+	background-color: #ffffff;
+	margin-top: 25px;
+	overflow: hidden;
+	padding: 15px;
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+-ms-box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+	/*left:8px;*/
+}
+section#slaide-bar{
+width:380px;
+border-right: 1px solid #6c6c6c;
+padding-right:15px;
+float:left;
+/*overflow: hidden;*/
+}
+div#slides{
+	border:1px solid #a7a7a7;
+	width:365px;
+	height:200px;
+	overflow: hidden;
+}
+div#slides a.thumb {
+display:none;/*прячем слайды, кроме одного*/
+}
+div#slides a.default-slide {
+display:block;
+}
+div#slideshow-commands{
+	background: url("../img/commands-bg.png") no-repeat;
+	width:340px;
+	height:20px;
+	margin:auto;
+	padding:3px 15px;
+	text-align:center;
+}
+a#previous-slide {
+background: url('../img/commands-previous-slide.png') no-repeat;
+display: block;
+float: left;
+height: 12px;
+margin-top: 1px;
+text-indent: -9000px;/*создаем красную строку текст (<>) уходит далеко влево*/
+width: 10px;
+clear:both;
+}
+a#next-slide {
+background: url('../img/commands-next-slide.png') no-repeat;
+display: block;
+float: right;
+height: 12px;
+margin-top: 1px;
+text-indent: -9000px;
+width: 10px;
+}
+/*section#information{
+display:block;
+width:380px;
+padding:25px 15px;
+float:right;
+height:220px;
+}*/
+section#information{
+margin-left: 410px;
+width: 350px;
+}
+div#text h3{
+	margin-bottom:30px;
+}
+p#contact-info{
+margin-top:40px;
+height:40px;
+}
+p#contact-info span{
+	display:block;
+}
+
+/*span#address {
+background:url('../img/address-icon.png') no-repeat 145px 3px;
+padding:0px 0px 0px 195px;
+}*/
+span#phone{
+background:url("../img/phone-icon.png") no-repeat;	
+float: left;
+width:150px;
+height:100%;
+padding-left:40px;
+padding-top:8px;
+}
+span#address{
+background: url("../img/address-icon.png") no-repeat 0px 3px;
+float: right;
+width:200px;
+padding-left:50px;
+}
+ul#tabs{
+	position:absolute;
+	right:0px;/*положение от праваого края 0px; располагаем меню справа*/
+}
+ul#tabs li{
+	background:url("../img/tabs-sprite.png") no-repeat;
+	width:70px;/*ширина одного блока*/
+	margin-right:1px;
+	height:35px;
+	float:left;/*чтобы список выровнялся по левому краю в одну линию, а не в столбик*/
+	}
+ul#tabs li a{
+	display:block;
+	width:100%; /*чтобы ссылка действовала в любой области элемента*/
+	height:100%;
+	text-indent:-9000px;/*прячем текст влево*/
+}
+/*прописываем для всех пунктов меню позицию спрайта при различных состояниях*/
+ul#tabs li#previous{
+	width:80px;
+	background-position:0px 0px;
+}
+ul#tabs li#previous:hover{
+	background-position:0px -40px;/*смещаемся на 40px вниз*/
+}
+ul#tabs li#previous:active, ul#tabs li#previous.current{
+	background-position:0px -80px;
+}
+	ul#tabs li#portfolio{
+	background-position:-80px 0px;
+}
+ul#tabs li#portfolio:hover{
+	background-position:-80px -40px;/*смещаемся на 40px вниз*/
+}
+ul#tabs li#portfolio:active, ul#tabs li#portfolio.current{
+	background-position:-80px -80px;
+}
+ul#tabs li#home{
+	background-position:-150px 0px;
+}
+ul#tabs li#home:hover{
+	background-position:-150px -40px;/*смещаемся на 40px вниз*/
+}
+ul#tabs li#home:active, ul#tabs li#home.current{
+	background-position:-150px -80px;
+}
+ul#tabs li#about{
+	background-position:-220px 0px;
+}
+ul#tabs li#about:hover{
+	background-position:-220px -40px;/*смещаемся на 40px вниз*/
+}
+ul#tabs li#about:active, ul#tabs li#about.current{
+	background-position:-220px -80px;
+}
+ul#tabs li#contact{
+	background-position:-290px 0px;
+}
+ul#tabs li#contact:hover{
+	background-position:-290px -40px;
+}
+ul#tabs li#contact:active, ul#tabs li#contact.current{
+	background-position:-290px -80px;
+}
+ul#tabs li#next{
+	width:65px;
+	background-position:-360px 0px;
+}
+ul#tabs li#next:hover{
+	background-position:-360px -40px;
+}
+ul#tabs li#next:active, ul#tabs li#next.current{
+	background-position:-360px -80px;
+}
+div#bltw{
+	margin-top:40px;
+	width:100%;
+	height:auto;
+}
+section#blog{
+	width:400px;
+	padding-right:15px;
+	float:left;
+}
+section#blog header{
+	background:url("../img/blog-header-bar.png") no-repeat;
+	width:100%;
+	height:40px;
+	padding-top: 10px;
+	padding-left:100px;
+	margin-top:12px;
+}
+.blog-entry{
+	margin-left:20px;
+	margin-top:30px;
+}
+.blog-entry h5{
+	float:left;
+	width:50%;
+}
+.meta p{
+	text-align:right;
+}
+.content{
+	padding-top:10px;
+	clear:both;
+	padding-left:15px;
+}
+p#read-more-wrapper{
+	margin-top:40px;
+	width:215px;
+	float:right;	
+}
+p#read-more-wrapper a{
+    background:url("../img/read-more-button.png") no-repeat;
+	width:210px;
+	height:25px;
+	text-indent: -9000px;
+	display:block;
+	border:none;
+}
+p#read-more-wrapper a:previous{
+	background-position: 0px 0px;
+}
+p#read-more-wrapper a:hover{
+	background-position: 0px -30px;
+}
+p#read-more-wrapper a:action{
+	background-position: 0px -60px;
+}
+/*tw*/
+section#tweeter{
+	width:400px;
+	margin-left:425px;
+	padding-right:15px;
+}
+section#tweeter header{
+	background:url("../img/twitter-header-bar.png") no-repeat;
+	width:100%;
+	height:78px;
+	padding-top: 22px;
+	padding-left:80px;
+}
+.tweet{
+	margin-top:13px;
+}
+.tweet img{
+	float:left;
+}
+.tweet h5{
+	padding-left:70px;
+}
+.tweet p{
+	padding-left:70px;
+	padding-top:10px;
+}
+p#get-tweets-wrapper{
+	margin-top:40px;
+	width:215px;
+	float:right;	
+}
+p#get-tweets-wrapper a{
+    background:url("../img/get-more-tweets-button.png") no-repeat;
+	width:210px;
+	height:25px;
+	text-indent: -9000px;
+	display:block;
+	border:none;
+}
+p#get-tweets-wrapper a:previous{
+	background-position: 0px 0px;
+}
+p#get-tweets-wrapper a:hover{
+	background-position: 0px -30px;
+}
+p#get-tweets-wrapper a:action{
+	background-position: 0px -60px;
+}
+/*footer*/
+div#footer-image{
+	background:#6eb9cc url("../img/footer-image.png") no-repeat center;
+	height:50px;
+	width:100%;
+	border-bottom: 2px ridge #ffffff;/*ridge противоположно groove*/
+	border-top: 2px groove #ffffff;
+}
+p#footer-text{
+	height:50px;
+	width:100%;
+	padding-top:15px;
+	background: url("../img/content-top-shadow.png") repeat-x;
+}
+/*сайт выглядит корректно во всех браузерах. в ie7 могут быть проблемы. для их устранения используем условные комментарии,
+которые перенаправляют IE7 на те блоки, группы, тэги и так далее, на которые мы хотим. 
+Другие браузеры воспримут комментарии как обычные комментарии и не будут их отображать. 
+В нашем случае, мы сделаем ссылку на внешнюю таблицу стилей в таком комментарии.
+
+<!--[if IE 7]>
+<link rel="stylesheet" media="screen" type="text/css" title="Style" href="css/ie7.css" />
+<![endif]-->
+*/
